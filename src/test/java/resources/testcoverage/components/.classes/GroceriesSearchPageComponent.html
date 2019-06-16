@@ -1,0 +1,105 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: GroceriesSearchPageComponent</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">components</a> ]
+</div>
+
+<h1>Coverage Summary for Class: GroceriesSearchPageComponent (components)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GroceriesSearchPageComponent</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package components;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import api.Scraper;
+<i>4</i>&nbsp;import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
+<i>5</i>&nbsp;import exception.GroceriesSearchPageEmptyException;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.util.List;
+<i>8</i>&nbsp;
+<b class="fc"><i>9</i>&nbsp;class GroceriesSearchPageComponent extends Scraper {</b>
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;    private String productsHyperlinksXpath = &quot;//li[@class=&#39;gridItem&#39;] //div[@class=&#39;productNameAndPromotions&#39;]//a&quot;;</b>
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    List&lt;HtmlAnchor&gt; findProductsHyperlinks() throws GroceriesSearchPageEmptyException {
+<b class="fc"><i>14</i>&nbsp;        List&lt;HtmlAnchor&gt; productsHtmlList = findHyperlinksBasedOnXpath(productsHyperlinksXpath);</b>
+<i>15</i>&nbsp;
+<b class="fc"><i>16</i>&nbsp;        if (productsHtmlList.isEmpty()) {</b>
+<b class="fc"><i>17</i>&nbsp;            throw new GroceriesSearchPageEmptyException(getPage().asXml());</b>
+<i>18</i>&nbsp;        }
+<b class="fc"><i>19</i>&nbsp;        return productsHtmlList;</b>
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    }
+<i>22</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-06-16 20:23</div>
+</div>
+</body>
+</html>

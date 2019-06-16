@@ -1,0 +1,119 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Scraper</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">api</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Scraper (api)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Scraper</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (4/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    81.8%
+  </span>
+  <span class="absValue">
+    (9/ 11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package api;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.gargoylesoftware.htmlunit.WebClient;
+<i>4</i>&nbsp;import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
+<i>5</i>&nbsp;import com.gargoylesoftware.htmlunit.html.HtmlPage;
+<i>6</i>&nbsp;import lombok.Getter;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import java.io.IOException;
+<i>9</i>&nbsp;import java.net.URL;
+<i>10</i>&nbsp;import java.util.List;
+<i>11</i>&nbsp;
+<b class="fc"><i>12</i>&nbsp;public abstract class Scraper {</b>
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    private WebClient client;
+<b class="fc"><i>15</i>&nbsp;    @Getter</b>
+<i>16</i>&nbsp;    private HtmlPage page;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    public void setUrl(String url) throws IOException {
+<b class="nc"><i>19</i>&nbsp;        this.setWebClient(new URL(url), new WebClient());</b>
+<b class="nc"><i>20</i>&nbsp;    }</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    public void setWebClient(URL url, WebClient webClient) throws IOException {
+<b class="fc"><i>23</i>&nbsp;        this.client = webClient;</b>
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;        // Some default options to speed up the page
+<b class="fc"><i>26</i>&nbsp;        this.client.getOptions().setCssEnabled(false);</b>
+<b class="fc"><i>27</i>&nbsp;        this.client.getOptions().setJavaScriptEnabled(false);</b>
+<b class="fc"><i>28</i>&nbsp;        this.client.getOptions().setDownloadImages(false);</b>
+<b class="fc"><i>29</i>&nbsp;        this.page = this.client.getPage(url);</b>
+<b class="fc"><i>30</i>&nbsp;    }</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    protected List&lt;HtmlAnchor&gt; findHyperlinksBasedOnXpath(String xpath) {
+<b class="fc"><i>33</i>&nbsp;        return page.getByXPath(xpath);</b>
+<i>34</i>&nbsp;    }
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-06-16 20:23</div>
+</div>
+</body>
+</html>
