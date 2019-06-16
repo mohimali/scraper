@@ -26,7 +26,7 @@ public class Results {
 
     @Getter
     @JsonIgnore
-    private BigDecimal vat;
+    private static final BigDecimal vat = new BigDecimal("1.2");
 
     public void addProduct(Product product) throws ProductNullException {
         if (results == null) {
@@ -35,7 +35,7 @@ public class Results {
 
         if (product != null) {
             this.results.add(product);
-            this.calculateTotal(new BigDecimal("1.2"));
+            this.calculateTotal(vat);
         }
         else{
             throw new ProductNullException();
