@@ -5,7 +5,8 @@ Console Application was made with the following in mind
 - Entities to model real life products
 - Custom exception classes for error Handling
 - Used a library called HtmlUnit to model HTML Elements http://htmlunit.sourceforge.net/
-- Test Coverage was done
+
+- Test Coverage was done in [Test Coverage Report](src/main/test/resources/testcoverage/index.html)
 
 
 ####Dependencies
@@ -51,4 +52,4 @@ Example response
 
 #### Future improvements
 - HTMLAnchors can't be instantiated so couldn't Mock these easily for the WebComponent Class. 
-- Would probably try a different library such as JSoup
+- Would probably try a different library such as JSoup to see how it compares with HtmlUnit

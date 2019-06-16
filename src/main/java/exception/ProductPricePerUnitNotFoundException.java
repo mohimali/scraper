@@ -1,6 +1,6 @@
 package exception;
 
-public class ProductPricePerUnitNotFoundException extends Exception {
+public class ProductPricePerUnitNotFoundException extends ComponentException{
 
     private static final String productPricePerUnitNotFoundMessage = "Product Price per unit could be Found. See html below \n ";
 

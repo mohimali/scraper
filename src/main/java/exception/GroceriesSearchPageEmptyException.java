@@ -1,6 +1,6 @@
 package exception;
 
-public class GroceriesSearchPageEmptyException extends Exception {
+public class GroceriesSearchPageEmptyException extends ComponentException {
 
     private static final String emptyListMessage = "No Links could be Found. See html below \n ";
 

@@ -1,6 +1,6 @@
 package exception;
 
-public class ProductDescriptionNotFoundException extends Exception {
+public class ProductDescriptionNotFoundException extends ComponentException {
 
     private static final String productDescriptionNotFoundMessage = "Product description could be Found. See html below \n ";
 

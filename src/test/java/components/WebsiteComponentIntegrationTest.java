@@ -61,7 +61,7 @@ public class WebsiteComponentIntegrationTest {
     }
 
     @Test
-    public void testWebsiteReturnsJsonResults() throws ProductNullException, ProductPricePerUnitNotFoundException, IOException, ProductDescriptionNotFoundException, ProductTitleNotFoundException, GroceriesSearchPageEmptyException {
+    public void testWebsiteReturnsJsonResults() throws ComponentException, IOException {
         WebsiteComponent websiteComponent = new WebsiteComponent();
         doNothing().when(groceriesSearchPageComponent).setUrl("");
         Mockito.when(websiteComponent.getProductsListFromAnchor(any())).thenReturn(products);

@@ -4,6 +4,7 @@ package components;
 import com.gargoylesoftware.htmlunit.MockWebConnection;
 import com.gargoylesoftware.htmlunit.WebClient;
 import entity.Product;
+import exception.ComponentException;
 import exception.ProductDescriptionNotFoundException;
 import exception.ProductPricePerUnitNotFoundException;
 import exception.ProductTitleNotFoundException;
@@ -30,7 +31,7 @@ public class ProductPageComponentTest {
 
 
     @Test
-    public void testGivenProductHtmlReturnsProduct() throws IOException, ProductPricePerUnitNotFoundException, ProductDescriptionNotFoundException, ProductTitleNotFoundException {
+    public void testGivenProductHtmlReturnsProduct() throws IOException, ComponentException {
         setWebClient(givenProductHtml());
         Product product = productPageComponent.getProduct();
 
@@ -42,19 +43,19 @@ public class ProductPageComponentTest {
 
 
     @Test(expected = ProductPricePerUnitNotFoundException.class)
-    public void testGivenProductHtmlWithoutPricePerUnitThrowsException() throws IOException, ProductPricePerUnitNotFoundException, ProductDescriptionNotFoundException, ProductTitleNotFoundException {
+    public void testGivenProductHtmlWithoutPricePerUnitThrowsException() throws IOException, ComponentException {
         setWebClient(givenProductHtmlNoPricePerUnit());
         productPageComponent.getProduct();
     }
 
     @Test(expected = ProductTitleNotFoundException.class)
-    public void testGivenProductHtmlWithoutTitleThrowsException() throws IOException, ProductPricePerUnitNotFoundException, ProductDescriptionNotFoundException, ProductTitleNotFoundException {
+    public void testGivenProductHtmlWithoutTitleThrowsException() throws IOException, ComponentException {
         setWebClient(givenProductHtmlNoTitle());
         productPageComponent.getProduct();
     }
 
     @Test(expected = ProductDescriptionNotFoundException.class)
-    public void testGivenProductHtmlWithoutDescriptionThrowsException() throws IOException, ProductPricePerUnitNotFoundException, ProductDescriptionNotFoundException, ProductTitleNotFoundException {
+    public void testGivenProductHtmlWithoutDescriptionThrowsException() throws IOException, ComponentException {
         setWebClient(givenProductHtmlNoDescription());
         productPageComponent.getProduct();
     }

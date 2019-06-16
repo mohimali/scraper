@@ -16,7 +16,7 @@ public class WebsiteComponent {
 
     private Results results;
 
-    public String scrapeResults(String url) throws GroceriesSearchPageEmptyException, IOException, ProductNullException, ProductPricePerUnitNotFoundException, ProductDescriptionNotFoundException, ProductTitleNotFoundException {
+    public String scrapeResults(String url) throws IOException, ComponentException {
         groceriesSearchPageComponent.setUrl(url);
         results = Results.builder().build();
 
@@ -29,7 +29,7 @@ public class WebsiteComponent {
 
     }
 
-    public List<Product> getProductsListFromAnchor(List<HtmlAnchor> htmlAnchors) throws IOException, ProductPricePerUnitNotFoundException, ProductDescriptionNotFoundException, ProductTitleNotFoundException, ProductNullException {
+    public List<Product> getProductsListFromAnchor(List<HtmlAnchor> htmlAnchors) throws IOException, ComponentException {
         List<Product> products = new ArrayList<>();
         for (HtmlAnchor productLink : htmlAnchors) {
             ProductPageComponent productPageComponent = new ProductPageComponent();

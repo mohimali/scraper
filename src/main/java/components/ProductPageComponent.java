@@ -5,6 +5,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlHeading1;
 import com.gargoylesoftware.htmlunit.html.HtmlParagraph;
 import com.gargoylesoftware.htmlunit.html.HtmlTableDataCell;
 import entity.Product;
+import exception.ComponentException;
 import exception.ProductDescriptionNotFoundException;
 import exception.ProductPricePerUnitNotFoundException;
 import exception.ProductTitleNotFoundException;
@@ -20,7 +21,7 @@ public class ProductPageComponent extends Scraper {
     private static final String productPageCaloriesXpath2 = ".//table[@class='nutritionTable'] //tr[2] //td";
     private static final String regExToExtractNumbers = "[^.0123456789]";
 
-    public Product getProduct() throws ProductTitleNotFoundException, ProductDescriptionNotFoundException, ProductPricePerUnitNotFoundException {
+    public Product getProduct() throws ComponentException {
 
         HtmlHeading1 productTitleAnchor = this.getPage().getFirstByXPath(productPageTitleXpath);
         HtmlParagraph productPagePricePerUnit = this.getPage().getFirstByXPath(productPagePerUnitXpath);
@@ -56,12 +57,16 @@ public class ProductPageComponent extends Scraper {
 
         Integer caloriesInteger = calories == null ? null : Integer.valueOf(calories);
 
-        return Product.builder()
+        Product product =  Product.builder()
                 .title(title)
                 .unitPrice(new BigDecimal(pricePerUnit))
                 .kCalPer100g(caloriesInteger)
                 .description(description)
                 .build();
+
+        System.out.println(product.toString());
+
+        return product;
 
     }
 }
