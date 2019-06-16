@@ -1,4 +1,5 @@
-#Sainsburys Scraper
+# Sainsburys Scraper
+
 This scrapes the Sainsburys Website and extracts product information.
 Console Application was made with the following in mind
 - Component based achitecture to model the different pages of the website
@@ -9,18 +10,18 @@ Console Application was made with the following in mind
 - Test Coverage stored in src/test/java/resources/testcoverage/index.html. Open with a browser to see it
 
 
-####Dependencies
+#### Dependencies
 - Java 1.8
 - Apache Maven 3.6.0 (Used at time of creating the application)
 
 
-####To Run the Application
+#### To Run the Application
 ```console
 mvn exec:java
 ```
 
 
-####To Run the Tests
+#### To Run the Tests
 ```console
 mvn test
 ```
@@ -30,7 +31,7 @@ mvn test
 
 
 
-Example response 
+#### Example response 
 ```json
 {
   "results": [
