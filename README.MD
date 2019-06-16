@@ -13,7 +13,18 @@ Console Application was made with the following in mind
 - Java 1.8
 - Apache Maven 3.6.0 (Used at time of creating the application)
 
-- To run in terminal use "mvn exec:java" the following. You must have maven installed
+
+####To Run the Application
+```console
+mvn exec:java
+```
+
+
+####To Run the Tests
+```console
+mvn test
+```
+
 
 
 
