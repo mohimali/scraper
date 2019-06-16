@@ -14,15 +14,15 @@ public class ProductTest {
     private Product productWithoutCalories;
 
     @Before
-    public void setup(){
-        validProduct =  Product.builder()
+    public void setup() {
+        validProduct = Product.builder()
                 .title("Sainsbury's Strawberries 400g")
                 .kCalPer100g(33)
                 .unitPrice(new BigDecimal("1.75"))
                 .description("by Sainsbury's strawberries")
                 .build();
 
-        productWithoutCalories =  Product.builder()
+        productWithoutCalories = Product.builder()
                 .title("Sainsbury's Strawberries 400g")
                 .unitPrice(new BigDecimal("1.75"))
                 .description("by Sainsbury's strawberries")
@@ -38,7 +38,7 @@ public class ProductTest {
     }
 
     @Test
-    public void testProductWithoutCaloriesReturnsOmitsKCal() {
+    public void testProductWithoutCaloriesOmitsKCal() {
         String actual = productWithoutCalories.toString();
         System.out.println(actual);
         Assert.assertThat(actual, CoreMatchers.not(CoreMatchers.containsString("kcal_per_100g")));
