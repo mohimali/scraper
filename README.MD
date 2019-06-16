@@ -6,7 +6,7 @@ Console Application was made with the following in mind
 - Custom exception classes for error Handling
 - Used a library called HtmlUnit to model HTML Elements http://htmlunit.sourceforge.net/
 
-- Test Coverage was done in [Test Coverage Report](src/main/test/resources/testcoverage/index.html)
+- Test Coverage stored in src/test/java/resources/testcoverage/index.html. Open with a browser to see it
 
 
 ####Dependencies
