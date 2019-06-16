@@ -50,5 +50,5 @@ Example response
 ```
 
 #### Future improvements
-- Finish the integration Tests for WebComponent
-- 
+- HTMLAnchors can't be instantiated so couldn't Mock these easily for the WebComponent Class. 
+- Would probably try a different library such as JSoup
